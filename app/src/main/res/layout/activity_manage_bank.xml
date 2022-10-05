@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".manage_bank">
 
-
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper" />
+        android:src="@drawable/wallpaper"
+        android:scaleType="centerCrop"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +23,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="8dp"
             android:orientation="vertical">
 
             <TextView
@@ -30,132 +32,160 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:textSize="30sp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="40dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:text="Soccer Cube"
-                android:textColor="#fff"
-                android:textSize="30sp" />
+                android:text="Edit Bank"
+                android:textColor="#fff"/>
 
-            <Button
-                android:id="@+id/btnAddPhoto"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="#74ECD0"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:text="Select Image"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:cornerRadius="10dp" />
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_gravity="center"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                app:boxBackgroundColor="@color/white"
-                app:cornerRadius="10dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Account Number"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editBankNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_gravity="center"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Bank Name"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                app:boxBackgroundColor="@color/white"
-                app:cornerRadius="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editBankName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_gravity="center"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="First Name"
-                app:boxStrokeWidth="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                app:boxBackgroundColor="@color/white"
-                app:cornerRadius="10dp"
-                app:boxStrokeWidthFocused="0dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editBankAccountFirstName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_gravity="center"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Last Name"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                app:boxBackgroundColor="@color/white"
-                app:cornerRadius="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editBankAccountLastName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-            <ImageView
-                android:id="@+id/qr_code"
-                android:layout_width="200dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/slip_payment" />
-            <Button
-                android:id="@+id/btnAddBank"
-                style="@style/Widget.MaterialComponents.Button"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:layout_marginTop="60dp"
-                android:backgroundTint="#31B632"
-                android:letterSpacing="0"
-                android:onClick="addBankaccount"
-                android:text="Add Bank Account"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:cornerRadius="10dp" />
+                android:layout_height="match_parent"
+                android:background="@drawable/payment_page"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:padding="30dp"
+                >
+                <!--            <com.google.android.material.textfield.TextInputLayout-->
+                <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="12dp"-->
+                <!--                android:hint="ไอดีไม่ต้องใส่ให้มันรันไปเอง">-->
+
+                <!--                <com.google.android.material.textfield.TextInputEditText-->
+                <!--                    android:id="@+id/addId"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:backgroundTint="@color/white"-->
+                <!--                    android:inputType="text"-->
+                <!--                    android:textSize="16sp" />-->
+                <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
 
+                <ImageView
+                    android:id="@+id/qr_code"
+                    android:layout_width="200dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/slip_payment" />
+
+                <Button
+                    android:id="@+id/cusSlip"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="60dp"
+                    android:layout_marginTop="10dp"
+                    android:letterSpacing="0"
+                    android:backgroundTint="#161D6F"
+                    android:padding="5dp"
+                    android:text="Select image"
+                    app:icon="@drawable/ic_baseline_camera_alt_24"
+                    app:iconGravity="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="10dp"
+                    android:textSize="16sp"
+                    android:onClick="chooseImg"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Account Number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editBankNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Bank Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editBankName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="First Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editBankAccountFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Last Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editBankAccountLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textMultiLine"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:id="@+id/btnAddBank"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="#00D681"
+                    android:letterSpacing="0"
+                    android:onClick="addBankaccount"
+                    android:padding="10dp"
+                    android:text="Add Bank Account"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    tools:ignore="OnClick" />
+                <!--                <Button-->
+                <!--                    android:id="@+id/btnReset"-->
+                <!--                    style="@style/Widget.MaterialComponents.Button"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="10dp"-->
+                <!--                    android:backgroundTint="#D54141"-->
+                <!--                    android:letterSpacing="0"-->
+                <!--                    android:onClick="reset"-->
+                <!--                    android:padding="10dp"-->
+                <!--                    android:text="Reset"-->
+                <!--                    android:textAllCaps="false"-->
+                <!--                    android:textColor="@color/white"-->
+                <!--                    android:textSize="16sp"-->
+                <!--                    app:cornerRadius="10dp"-->
+                <!--                    tools:ignore="OnClick" />-->
+            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 </RelativeLayout>
