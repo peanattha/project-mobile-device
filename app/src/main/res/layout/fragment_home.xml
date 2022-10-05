@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,29 +9,23 @@
         android:layout_height="match_parent"
         android:src="@drawable/wallpaper"
         android:scaleType="centerCrop"/>
-    <RelativeLayout
+
+    <TextView
+        android:id="@+id/TextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Select Stadium"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical">
-        <TextView
-            android:id="@+id/TextPage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:text="Select Stadium"
-            android:textAlignment="center"
-            android:textSize="20sp" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_below="@+id/TextPage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:scrollbars="vertical" />
-    </RelativeLayout>
-
-</FrameLayout>
+        android:scrollbars="vertical"
+        android:layout_margin="20dp"
+        android:layout_below="@id/TextPage"/>
+</RelativeLayout>

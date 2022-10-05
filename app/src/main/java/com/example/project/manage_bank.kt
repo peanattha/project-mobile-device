@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.project.databinding.ActivityManageBankBinding
-import com.example.project.databinding.ActivityRegisterBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class manage_bank : AppCompatActivity() {
     private lateinit var binding : ActivityManageBankBinding
@@ -38,6 +36,7 @@ class manage_bank : AppCompatActivity() {
                                 binding.editBankNumber.setText(BankDataarrayList[0].account_number)
                                 binding.editBankAccountFirstName.setText(BankDataarrayList[0].firstName)
                                 binding.editBankAccountLastName.setText(BankDataarrayList[0].lastName)
+                                Glide.with(applicationContext).load(BankDataarrayList[0].qr_code).into(binding.qrCode)
                             }
                         }
                     }
