@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wallpaper">
+
+        <RelativeLayout
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/stadium"
+                android:layout_width="match_parent"
+                android:layout_height="720px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/stadium1" />
+
+            <TextView
+                android:id="@+id/idStadium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stadium"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="30px"
+                android:text="ID stadium"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nameStadium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idStadium"
+                android:layout_marginLeft="30px"
+                android:text="name Stadium"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/idStadium"
+                android:layout_alignParentLeft="@id/nameStadium"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="30px"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/line"
+                android:layout_width="1000px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameStadium"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/detailStadium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line"
+                android:layout_marginLeft="30px"
+                android:text="รายละเอียด"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/priceStadium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detailStadium"
+                android:layout_marginLeft="30px"
+                android:text="ราคา"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <!--        //yun-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="250dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_date"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:text="Select Date"
+                android:textSize="20sp"
+
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/start_time"
+                android:layout_width="250dp"
+                android:layout_height="65dp"
+                app:boxBackgroundColor="@color/white"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/selectstarttime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:padding="20dp"
+                    android:text="Start Time"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/end_time"
+                android:layout_width="250dp"
+                android:layout_height="65dp"
+                app:boxBackgroundColor="@color/white"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/selecttimeend"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:padding="20dp"
+                    android:text="End Time"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btn_search"-->
+            <!--                android:layout_width="100dp"-->
+            <!--                android:layout_height="60dp"-->
+            <!--                android:text="Search"-->
+            <!--                android:textStyle="bold"/>-->
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+            <Button
+                android:id="@+id/btn_search"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="150dp"
+                android:layout_height="60sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#58FAAE"
+                android:textColor="@color/black"
+                android:letterSpacing="0"
+                android:layout_marginHorizontal="10dp"
+                android:text="จองสนาม"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:cornerRadius="30dp"
+                app:strokeColor="@color/white" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</RelativeLayout>
