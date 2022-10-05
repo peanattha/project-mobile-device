@@ -14,156 +14,130 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/stadium"
+            <TextView
+                android:id="@+id/TextPage"
                 android:layout_width="match_parent"
-                android:layout_height="720px"
-                android:scaleType="centerCrop"
-                android:src="@drawable/stadium1" />
-
-            <TextView
-                android:id="@+id/idStadium"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Stadium Details"
+                android:textColor="#fff"
+                android:layout_marginBottom="20dp"
+                android:textSize="30sp" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/stadium"
-                android:layout_marginLeft="30px"
-                android:layout_marginTop="30px"
-                android:text="ID stadium"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/nameStadium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/idStadium"
-                android:layout_marginLeft="30px"
-                android:text="name Stadium"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_below="@id/idStadium"
-                android:layout_alignParentLeft="@id/nameStadium"
-                android:layout_marginLeft="30px"
-                android:layout_marginTop="30px"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/line"
-                android:layout_width="1000px"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/nameStadium"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:id="@+id/detailStadium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/line"
-                android:layout_marginLeft="30px"
-                android:text="รายละเอียด"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/priceStadium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/detailStadium"
-                android:layout_marginLeft="30px"
-                android:text="ราคา"
-                android:textColor="@color/white" />
+                android:layout_below="@id/TextPage"
+                android:clickable="true"
+                android:layout_margin="28dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/cardImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/stadium1"
+                        android:scaleType="centerCrop" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="80dp"
+                        android:padding="16dp">
+                        <TextView
+                            android:id="@+id/stadiumname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="Name"
+                            android:textColor="#fff"/>
+                        <TextView
+                            android:id="@+id/stadiumprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="test"
+                            android:textSize="16sp"
+                            android:textColor="#fff"/>
+                        <TextView
+                            android:id="@+id/stadiumdetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="test"
+                            android:textSize="16sp"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
         </RelativeLayout>
-
-        <!--        //yun-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="210dp"
             android:orientation="vertical"
             android:gravity="center">
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/btn_date"
-                android:layout_width="250dp"
+                android:layout_width="360dp"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_height="60dp"
-                android:background="@color/white"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#293462"
+                app:cornerRadius="10dp"
                 android:text="Select Date"
-                android:textSize="20sp"
-
+                android:textSize="16sp"
                 android:textAllCaps="false"/>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/start_time"
-                android:layout_width="250dp"
-                android:layout_height="65dp"
-                app:boxBackgroundColor="@color/white"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cornerRadius="10dp"
+                app:boxBackgroundColor="#293462"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
                 <AutoCompleteTextView
                     android:id="@+id/selectstarttime"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="none"
-                    android:padding="20dp"
                     android:text="Start Time"/>
-
             </com.google.android.material.textfield.TextInputLayout>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/end_time"
-                android:layout_width="250dp"
-                android:layout_height="65dp"
-                app:boxBackgroundColor="@color/white"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="#293462"
+                app:cornerRadius="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
                 <AutoCompleteTextView
                     android:id="@+id/selecttimeend"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="none"
-                    android:padding="20dp"
                     android:text="End Time"/>
-
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!--            <androidx.appcompat.widget.AppCompatButton-->
-            <!--                android:id="@+id/btn_search"-->
-            <!--                android:layout_width="100dp"-->
-            <!--                android:layout_height="60dp"-->
-            <!--                android:text="Search"-->
-            <!--                android:textStyle="bold"/>-->
-        </LinearLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/white">
             <Button
                 android:id="@+id/btn_search"
                 style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="150dp"
-                android:layout_height="60sp"
+                android:layout_width="360dp"
+                android:layout_gravity="center"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:backgroundTint="#58FAAE"
-                android:textColor="@color/black"
                 android:letterSpacing="0"
-                android:layout_marginHorizontal="10dp"
-                android:text="จองสนาม"
+                android:text="Reserve Stadium"
                 android:textAllCaps="true"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                app:cornerRadius="30dp"
+                app:cornerRadius="10dp"
                 app:strokeColor="@color/white" />
-        </RelativeLayout>
-
-
-
+        </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

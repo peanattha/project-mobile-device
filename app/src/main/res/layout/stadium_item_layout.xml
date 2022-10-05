@@ -26,15 +26,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="65dp"
-                    android:padding="10dp">
-                    <TextView
-                        android:id="@+id/stadiumid"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ID"
-                        android:textSize="18sp"
-                        android:textColor="#fff"/>
+                    android:layout_marginTop="80dp"
+                    android:padding="16dp">
                     <TextView
                         android:id="@+id/stadiumname"
                         android:layout_width="wrap_content"

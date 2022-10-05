@@ -50,17 +50,18 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:cornerRadius="30dp" />
+                app:cornerRadius="10dp" />
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="375dp"
-                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
+                app:cornerRadius="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="Account Number"
                 app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
-                android:layout_marginTop="10dp">
+                app:boxStrokeWidthFocused="0dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editBankNumber"
@@ -74,14 +75,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="375dp"
-                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="Bank Name"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
-                android:layout_marginTop="10dp">
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
+                app:cornerRadius="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editBankName"
@@ -93,14 +95,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="375dp"
-                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="First Name"
                 app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
-                android:layout_marginTop="10dp">
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
+                app:cornerRadius="10dp"
+                app:boxStrokeWidthFocused="0dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editBankAccountFirstName"
@@ -112,14 +115,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="375dp"
-                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="Last Name"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
-                android:layout_marginTop="10dp">
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
+                app:cornerRadius="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editBankAccountLastName"
@@ -132,23 +136,24 @@
                 android:id="@+id/qr_code"
                 android:layout_width="200dp"
                 android:layout_height="300dp"
-                android:layout_marginLeft="25dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/slip_payment" />
             <Button
                 android:id="@+id/btnAddBank"
                 style="@style/Widget.MaterialComponents.Button"
-                android:layout_height="65dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:layout_marginTop="60dp"
                 android:backgroundTint="#31B632"
                 android:letterSpacing="0"
-                android:text="Add Bank Account"
                 android:onClick="addBankaccount"
+                android:text="Add Bank Account"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:cornerRadius="30dp" />
+                app:cornerRadius="10dp" />
+
 
 
         </LinearLayout>

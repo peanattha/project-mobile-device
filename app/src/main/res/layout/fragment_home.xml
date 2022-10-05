@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:src="@drawable/wallpaper"
         android:scaleType="centerCrop"/>
-
     <TextView
         android:id="@+id/TextPage"
         android:layout_width="match_parent"
@@ -20,7 +19,6 @@
         android:text="Select Stadium"
         android:textColor="#fff"
         android:textSize="30sp" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

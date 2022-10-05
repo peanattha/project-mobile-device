@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.project.databinding.StadiumItemLayoutBinding
 
 class stadiumAdapter (val stadiumList : ArrayList<stadium>?, val context: Context)
@@ -36,10 +37,10 @@ class stadiumAdapter (val stadiumList : ArrayList<stadium>?, val context: Contex
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val binding = holder.binding
-        binding.stadiumid.text = "สนามที่ : " +stadiumList!![position].stadium_id
-        binding.stadiumname.text = "ชื่อสนาม" +stadiumList!![position].stadium_name
-        binding.stadiumprice.text = "ราคา : " +stadiumList!![position].stadium_price
-        binding.stadiumdetail.text = "รายละเอียด : " +stadiumList!![position].stadium_detail
+        Glide.with(context).load(stadiumList!![position].stadium_img).into(binding.cardImg)
+        binding.stadiumname.text = stadiumList!![position].stadium_name
+        binding.stadiumprice.text = "Price : " +stadiumList!![position].stadium_price+" Bath "
+        binding.stadiumdetail.text = "Details : " +stadiumList!![position].stadium_detail
     }
 
     override fun getItemCount(): Int {

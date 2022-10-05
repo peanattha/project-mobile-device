@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".register">
-
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +18,6 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/soccer"
                 android:layout_width="match_parent"
@@ -30,7 +28,6 @@
                 android:gravity="center"
                 android:text="Soccer Cube"
                 android:textSize="30sp" />
-
             <TextView
                 android:id="@+id/register"
                 android:layout_width="match_parent"
@@ -42,23 +39,20 @@
                 android:text="Register"
                 android:layout_below="@id/soccer"
                 android:textSize="25sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center">
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="175dp"
-                    android:layout_height="wrap_content"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
                     android:hint="Name"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/border"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundColor="@color/white"
                     android:layout_marginBottom="10dp">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/res_name"
                         android:layout_width="match_parent"
@@ -66,21 +60,17 @@
                         android:inputType="text"
                         android:textSize="20sp" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <!--surname-->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="175dp"
-                    android:layout_height="wrap_content"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
                     android:hint="surname"
-                    android:layout_marginTop="20dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="12dp"
+                    app:boxBackgroundColor="@color/white"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/border"
                     android:layout_marginBottom="10dp">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/res_surname"
                         android:layout_width="match_parent"
@@ -88,21 +78,17 @@
                         android:inputType="text"
                         android:textSize="20sp" />
                 </com.google.android.material.textfield.TextInputLayout>
-
             </LinearLayout>
-
-            <!--mail-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="360dp"
-                android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
                 android:hint="Email address"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/border"
                 android:layout_marginBottom="10dp">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/res_mail"
                     android:layout_width="match_parent"
@@ -110,19 +96,16 @@
                     android:inputType="textEmailAddress"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!--phonenumber-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="360dp"
-                android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 android:hint="Phone +66"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
                 android:layout_marginBottom="10dp">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/res_phonenumber"
                     android:layout_width="match_parent"
@@ -130,19 +113,16 @@
                     android:inputType="phone"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!--Password-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="360dp"
-                android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 android:hint="Password"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
                 android:layout_marginBottom="10dp">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/res_password"
                     android:layout_width="match_parent"
@@ -150,25 +130,19 @@
                     android:inputType="textPassword"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!--Password-->
-
-
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/btn_register"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="360dp"
-                android:layout_height="65dp"
-                android:background="@drawable/background_btn"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#293462"
                 android:onClick="ADD"
                 android:text="Register"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:layout_marginTop="60dp"
-                >
-            </androidx.appcompat.widget.AppCompatButton>
-
+                app:cornerRadius="10dp">
+            </Button>
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>

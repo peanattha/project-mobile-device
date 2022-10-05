@@ -37,15 +37,15 @@
                 android:textSize="30sp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
+                android:layout_width="360dp"
                 android:layout_gravity="center"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="First Name"
                 app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
-                android:layout_marginTop="10dp">
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidthFocused="0dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/FirstName"
@@ -55,15 +55,15 @@
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
+                android:layout_width="360dp"
                 android:layout_gravity="center"
-                android:background="@drawable/boder_radius"
                 app:boxStrokeWidth="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
                 app:boxStrokeWidthFocused="0dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Last Name"
-                android:layout_marginTop="10dp">
+                android:hint="Last Name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/LastName"
@@ -73,33 +73,33 @@
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
+                android:layout_width="360dp"
                 android:layout_gravity="center"
                 app:boxStrokeWidth="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
                 app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Tel"
-                android:layout_marginTop="10dp">
+                android:hint="Tel">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tel"
-                    android:layout_width="match_parent"
+                    android:layout_width="360dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
+                android:layout_width="360dp"
                 android:layout_gravity="center"
                 app:boxStrokeWidth="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@color/white"
                 app:boxStrokeWidthFocused="0dp"
-                android:background="@drawable/boder_radius"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Email"
-                android:layout_marginTop="10dp">
+                android:hint="Email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
@@ -109,28 +109,30 @@
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/btnEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/boder_radius_btn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="360dp"
                 android:layout_gravity="center"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#293462"
                 android:text="Edit"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_margin="20dp">
-            </androidx.appcompat.widget.AppCompatButton>
-            <androidx.appcompat.widget.AppCompatButton
+                android:textSize="20sp">
+            </Button>
+            <Button
                 android:id="@+id/btnLogout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_logout"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="360dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#F44336"
                 android:layout_gravity="center"
                 android:text="Log Out"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_margin="20dp">
-            </androidx.appcompat.widget.AppCompatButton>
+                android:textSize="20sp">
+            </Button>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

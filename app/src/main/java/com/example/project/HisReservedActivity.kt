@@ -46,8 +46,8 @@ class HisReservedActivity : AppCompatActivity() {
 
         bindingHisResDetail.stadiumName.setText(stadium_name.toString().capitalize())
         bindingHisResDetail.date.setText(reserve_date_format)
-        bindingHisResDetail.time.setText(time_start+":00 - "+time_end+":00")
-        bindingHisResDetail.price.setText("ราคา: "+total_price+" บาท")
+        bindingHisResDetail.time.setText("Time: "+time_start+":00 - "+time_end+":00")
+        bindingHisResDetail.price.setText("Price: "+total_price+" Bath")
         Glide.with(applicationContext).load(slip_img).into(bindingHisResDetail.slip)
         Glide.with(applicationContext).load(stadium_img).into(bindingHisResDetail.cardImg)
 
