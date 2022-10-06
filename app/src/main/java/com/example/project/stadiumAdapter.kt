@@ -39,7 +39,7 @@ class stadiumAdapter (val stadiumList : ArrayList<stadium>?, val context: Contex
         val binding = holder.binding
         Glide.with(context).load(stadiumList!![position].stadium_img).into(binding.cardImg)
         binding.stadiumname.text = stadiumList!![position].stadium_name
-        binding.stadiumprice.text = "Price : " +stadiumList!![position].stadium_price+" Bath "
+        binding.stadiumprice.text = "Price : " +stadiumList!![position].stadium_price+" Bath Per 1 Hr. "
         binding.stadiumdetail.text = "Details : " +stadiumList!![position].stadium_detail
     }
 

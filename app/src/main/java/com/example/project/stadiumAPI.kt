@@ -16,7 +16,7 @@ interface stadiumAPI {
         @Field("reserve_date") reserve_date: String,
         @Field("time_start") time_start: String,
         @Field("time_end") time_end: String
-    ): Call<List<search>>
+    ): Call<search>
 
 
     companion object {
