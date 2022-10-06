@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,12 +11,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".payment">
+        tools:context=".MainActivity">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="900dp"
-
+            android:src="@drawable/wallpaper"
             android:scaleType="centerCrop"
             tools:ignore="MissingConstraints" />
         <LinearLayout
@@ -45,20 +47,54 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-
-                android:padding="20dp"
-                android:scaleType="centerCrop">
-
-                <TextView
-                    android:id="@+id/res_details"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/cardImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:src="@drawable/stadium1"
+                    android:scaleType="centerCrop" />
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="40dp"
-                    android:text="Soccer cube สนาม 1 (In door) \n 10/10/2020 \n 17.00 - 19.00"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:orientation="vertical"
+                    android:layout_marginTop="80dp"
+                    android:padding="16dp">
+                    <TextView
+                        android:id="@+id/stadium_reserve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="สนาม"
+                        android:textColor="#fff"/>
+                    <TextView
+                        android:id="@+id/date_reserve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="วันที่"
+                        android:textSize="16sp"
+                        android:textColor="#fff"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/start_reserve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="เวลาเริ่ม"
+                            android:textSize="16sp"
+                            android:textColor="#fff"/>
+                        <TextView
+                            android:id="@+id/end_reserve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_toRightOf="@+id/start_reserve"
+                            android:text="เวลาจบ"
+                            android:textSize="16sp"
+                            android:textColor="#fff"/>
+                    </RelativeLayout>
+                </LinearLayout>
             </RelativeLayout>
 
             <LinearLayout
@@ -66,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-
+                android:background="@drawable/payment_page"
                 android:orientation="vertical"
                 android:padding="20dp">
 
@@ -75,7 +111,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="เลขบัญชี :"
                     android:textColor="#4F4F4F"
@@ -86,7 +121,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="ธนาคาร : "
                     android:textColor="#4F4F4F"
@@ -97,85 +131,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="นาย : "
                     android:textColor="#4F4F4F"
                     android:textSize="20sp"
                     android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/stadium_reserve"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
+                <ImageView
+                    android:id="@+id/qr_code"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="สนาม :"
-                    android:textColor="#4F4F4F"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/date_reserve"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="วัน :"
-                    android:textColor="#4F4F4F"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/start_reserve"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="เวลาเริ่ม :"
-                    android:textColor="#4F4F4F"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/end_reserve"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="เวลาจบ :"
-                    android:textColor="#4F4F4F"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:src="@drawable/stadium1"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="สแกนเพื่อโอนเข้าบัญชี"
                     android:textColor="#00165C"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
-                <ImageView
-                    android:id="@+id/image_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_margin="24dp" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Tap to Select Image"
-                    android:textSize="24sp" />
 
                 <Button
-                    android:id="@+id/button_upload"
+                    android:id="@+id/imageView"
                     style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -184,8 +167,8 @@
                     android:letterSpacing="0"
                     android:backgroundTint="#161D6F"
                     android:padding="10dp"
-                    android:text="อัพโหลดหลักฐานการชำระเงิน"
-
+                    android:text="แนบหลักฐานการชำระเงิน"
+                    app:icon="@drawable/ic_baseline_camera_alt_24"
                     app:iconGravity="textStart"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -207,14 +190,13 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-
                     android:drawableTint="#00165C"
                     android:text="ถ้าไม่แนบหลักฐานการชำระเงินจะไม่สามารถทำรายการต่อไปได้"
                     android:textColor="#00165C"
                     android:textSize="17sp" />
             </LinearLayout>
-
             <Button
+                android:id="@+id/button_Upload"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -228,9 +210,10 @@
                 android:textAllCaps="false"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                app:cornerRadius="30dp"
+                app:cornerRadius="10dp"
                 app:strokeColor="@color/white"
                 app:strokeWidth="1dp"/>
+
 
 
         </LinearLayout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".stadium_detail">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/wallpaper"
+        android:scaleType="centerCrop"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Media -->
+                    <ImageView
+                        android:id="@+id/cardImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stadium1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginBottom="0dp"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/stadiumName"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:text="Stadium1"-->
+                        <!--                            android:textAppearance="?attr/textAppearanceHeadline6"-->
+                        <!--                            android:textColor="#fff"-->
+                        <!--                            android:textSize="20sp" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/date"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="8dp"-->
+                        <!--                            android:text="15/08/2565"-->
+                        <!--                            android:textColor="#fff"-->
+                        <!--                            android:textSize="14sp" />-->
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/price"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_margin="8dp"-->
+            <!--                android:text="ราคา: 1600 บาท"-->
+            <!--                android:textColor="#fff"-->
+            <!--                android:textSize="16sp"></TextView>-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="8dp"-->
+            <!--                android:layout_marginTop="8dp"-->
+            <!--                android:text="รูปภาพสลิปชำระเงิน"-->
+            <!--                android:textColor="#fff"-->
+            <!--                android:textSize="16sp"></TextView>-->
+            <TextView
+                android:id="@+id/stadiumIdDPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="ไอดีสนาม : "
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/stadiumNameDPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="ชื่อสนาม : "
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/stadiumPriceDPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="ราคา:"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/stadiumDetailDPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="รายละเอียด : "
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <Button
+                    android:id="@+id/btnEdit"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="4"
+                    android:backgroundTint="#00D681"
+                    android:letterSpacing="0"
+                    android:onClick="editStadiumPage"
+                    android:padding="10dp"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    tools:ignore="OnClick" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DA2424"
+                    android:letterSpacing="0"
+                    android:onClick="deleteStadium"
+                    android:padding="10dp"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    android:text="delete"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    tools:ignore="OnClick" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+
+    <!--<ScrollView-->
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:fillViewport="true">-->
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:context=".MainActivity">-->
+
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="900dp"-->
+    <!--            android:src="@drawable/wallpaper"-->
+    <!--            android:scaleType="centerCrop"-->
+    <!--            tools:ignore="MissingConstraints" />-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_marginHorizontal="30dp"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="fill_parent"-->
+    <!--            android:gravity="center_horizontal"-->
+    <!--            tools:ignore="MissingConstraints">-->
+
+    <!--            <RelativeLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginBottom="30dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/Text_soccer"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_marginTop="40dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="Soccer Cube"-->
+    <!--                    android:textColor="#fff"-->
+    <!--                    android:textSize="30sp" />-->
+
+    <!--            </RelativeLayout>-->
+
+
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/Payment"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="30dp"-->
+
+    <!--                android:orientation="vertical"-->
+    <!--                android:padding="20dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/stadiumIdDPage"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="ชื่อสนาม"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20sp"-->
+    <!--                    android:textStyle="bold"/>-->
+    <!--                <TextView-->
+    <!--                    android:id="@+id/stadiumNameDPage"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="ราคา"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20sp"-->
+    <!--                    android:textStyle="bold"/>-->
+    <!--                <TextView-->
+    <!--                    android:id="@+id/stadiumPriceDPage"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="รายละเอียดมั้ง"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20sp"-->
+    <!--                    android:textStyle="bold"/>-->
+    <!--                <TextView-->
+    <!--                    android:id="@+id/stadiumDetailDPage"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="จำไม่ด้ายย"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20sp"-->
+    <!--                    android:textStyle="bold"/>-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/stadiumUpdateDPage"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="แก้ไขล่าสุดเมื่อ : -"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20sp"-->
+    <!--                    android:textStyle="bold"/>-->
+
+    <!--            </LinearLayout>-->
+
+
+    <!--            <Button-->
+    <!--                android:id="@+id/cusSlip"-->
+    <!--                style="@style/Widget.MaterialComponents.Button"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginHorizontal="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:letterSpacing="0"-->
+    <!--                android:backgroundTint="#2E3EFF"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:text="แก้ไขจ้า"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                app:cornerRadius="10dp"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:onClick="editStadiumPage"/>-->
+    <!--            <Button-->
+    <!--                android:id="@+id/deleteStadiumBtn"-->
+    <!--                style="@style/Widget.MaterialComponents.Button"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginHorizontal="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:letterSpacing="0"-->
+    <!--                android:backgroundTint="#FF2222"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:text="ลบบบ"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                app:cornerRadius="10dp"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:onClick="deleteStadium"/>-->
+
+
+    <!--        </LinearLayout>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</ScrollView>-->

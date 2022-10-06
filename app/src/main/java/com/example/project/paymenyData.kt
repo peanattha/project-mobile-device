@@ -5,21 +5,36 @@ import com.google.gson.annotations.SerializedName
 
 data class paymentData (
     @Expose
-    @SerializedName("bank_admin_id") val bank_admin_id: Int,
+    @SerializedName("payment_id ") val bank_name: String,
 
     @Expose
-    @SerializedName("bank_name") val bank_name: String,
+    @SerializedName("bank_admin_id") val firstName: String,
 
     @Expose
-    @SerializedName("account_number") val account_number:String,
+    @SerializedName("payment_status") val lastName: String,
 
     @Expose
-    @SerializedName("firstName") val firstName: String,
+    @SerializedName("slip_img") val qr_code: String,
 
     @Expose
-    @SerializedName("lastName") val lastName: String,
+    @SerializedName("reserve_id") val reserve_id: String,
 
     @Expose
-    @SerializedName("qr_code") val qr_code: String,
+    @SerializedName("user_id") val user_id: String,
+
+    @Expose
+    @SerializedName("stadium_id") val stadium_id: String,
+
+    @Expose
+    @SerializedName("total_price") val total_price: String,
+
+    @Expose
+    @SerializedName("reserve_date") val reserve_date:String,
+
+    @Expose
+    @SerializedName("time_start") val time_start: String,
+
+    @Expose
+    @SerializedName("time_end") val time_end: String,
 ){
 }

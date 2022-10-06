@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add_stadium">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/wallpaper"
+        android:scaleType="centerCrop"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Stadium"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/payment_page"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:padding="30dp"
+                >
+                <!--            <com.google.android.material.textfield.TextInputLayout-->
+                <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="12dp"-->
+                <!--                android:hint="ไอดีไม่ต้องใส่ให้มันรันไปเอง">-->
+
+                <!--                <com.google.android.material.textfield.TextInputEditText-->
+                <!--                    android:id="@+id/addId"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:backgroundTint="@color/white"-->
+                <!--                    android:inputType="text"-->
+                <!--                    android:textSize="16sp" />-->
+                <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="329dp"
+                    android:layout_height="146dp"/>
+
+                <Button
+                    android:id="@+id/cusSlip"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="60dp"
+                    android:layout_marginTop="10dp"
+                    android:letterSpacing="0"
+                    android:backgroundTint="#161D6F"
+                    android:padding="5dp"
+                    android:text="Select image"
+                    app:icon="@drawable/ic_baseline_camera_alt_24"
+                    app:iconGravity="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="10dp"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Stadium Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Stadium Price">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="เว้นไว้ก่อนเผื่อใส่ลิ้งแทน">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Stadium Detail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textMultiLine"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:id="@+id/btnEdit"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="#00D681"
+                    android:letterSpacing="0"
+                    android:onClick="addStadium"
+                    android:padding="10dp"
+                    android:text="Add"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    tools:ignore="OnClick" />
+                <!--                <Button-->
+                <!--                    android:id="@+id/btnReset"-->
+                <!--                    style="@style/Widget.MaterialComponents.Button"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="10dp"-->
+                <!--                    android:backgroundTint="#D54141"-->
+                <!--                    android:letterSpacing="0"-->
+                <!--                    android:onClick="reset"-->
+                <!--                    android:padding="10dp"-->
+                <!--                    android:text="Reset"-->
+                <!--                    android:textAllCaps="false"-->
+                <!--                    android:textColor="@color/white"-->
+                <!--                    android:textSize="16sp"-->
+                <!--                    app:cornerRadius="10dp"-->
+                <!--                    tools:ignore="OnClick" />-->
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

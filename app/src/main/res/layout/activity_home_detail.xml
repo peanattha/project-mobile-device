@@ -3,141 +3,144 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@drawable/wallpaper">
 
-        <RelativeLayout
-            android:id="@+id/text"
+        <TextView
+            android:id="@+id/TextPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Stadium Details"
+            android:textColor="#fff"
+            android:layout_marginBottom="20dp"
+            android:textSize="30sp" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/TextPage"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TextPage"
+            android:clickable="true"
+            android:layout_margin="20dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/cardImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/stadium1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/stadiumname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/stadiumprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="test"
+                        android:textColor="#fff"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/stadiumdetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="test"
+                        android:textColor="#fff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <Button
+            android:id="@+id/btn_date"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#293462"
+            android:text="Select Date"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/start_time"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:boxBackgroundColor="#293462"
+            android:layout_gravity="center"
+            app:cornerRadius="10dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/selectstarttime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                android:text="Stadium Details"
-                android:textColor="#fff"
-                android:layout_marginBottom="20dp"
-                android:textSize="30sp" />
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card"
-                android:layout_width="wrap_content"
+                android:inputType="none"
+                android:text="Start Time"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/end_time"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:boxBackgroundColor="#293462"
+            android:layout_gravity="center"
+            app:cornerRadius="10dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/selecttimeend"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/TextPage"
-                android:clickable="true"
-                android:layout_margin="28dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/cardImg"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:src="@drawable/stadium1"
-                        android:scaleType="centerCrop" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="80dp"
-                        android:padding="16dp">
-                        <TextView
-                            android:id="@+id/stadiumname"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:text="Name"
-                            android:textColor="#fff"/>
-                        <TextView
-                            android:id="@+id/stadiumprice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="test"
-                            android:textSize="16sp"
-                            android:textColor="#fff"/>
-                        <TextView
-                            android:id="@+id/stadiumdetail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="test"
-                            android:textSize="16sp"
-                            android:textColor="#fff"/>
-                    </LinearLayout>
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="210dp"
-            android:orientation="vertical"
-            android:gravity="center">
-            <Button
-                android:id="@+id/btn_date"
-                android:layout_width="360dp"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#293462"
-                app:cornerRadius="10dp"
-                android:text="Select Date"
-                android:textSize="16sp"
-                android:textAllCaps="false"/>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/start_time"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cornerRadius="10dp"
-                app:boxBackgroundColor="#293462"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                <AutoCompleteTextView
-                    android:id="@+id/selectstarttime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:inputType="none"
-                    android:text="Start Time"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/end_time"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:boxBackgroundColor="#293462"
-                app:cornerRadius="10dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                <AutoCompleteTextView
-                    android:id="@+id/selecttimeend"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:inputType="none"
-                    android:text="End Time"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <Button
-                android:id="@+id/btn_search"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="360dp"
-                android:layout_gravity="center"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#4CAF50"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_centerVertical="true"
-                android:letterSpacing="0"
-                android:text="Reserve Stadium"
-                android:textAllCaps="true"
-                android:textStyle="bold"
-                app:cornerRadius="10dp"
-                app:strokeColor="@color/white" />
-        </LinearLayout>
-    </RelativeLayout>
+                android:inputType="none"
+                android:text="End Time"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_search"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#4CAF50"
+            android:letterSpacing="0"
+            android:text="Reserve Stadium"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/white" />
+    </LinearLayout>
+
 </RelativeLayout>

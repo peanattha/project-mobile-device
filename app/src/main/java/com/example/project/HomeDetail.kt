@@ -67,19 +67,19 @@ class HomeDetail : AppCompatActivity() {
                         response: Response<search>
                     ) {
                         if(response.isSuccessful){
-                            searchList.add(search(response.body()?.stadium_id.toString(), response.body()?.time_end.toString()
+                            searchList.add(search(response.body()?.id.toString(), response.body()?.reserve_date.toString()
                                 ,response.body()?.time_start.toString(),response.body()?.time_end.toString()))
                         }
                         var sum_time = bindingDetail.selecttimeend.text.toString().toInt() - bindingDetail.selectstarttime.text.toString().toInt()
                         var total_price = sum_time * std_price.toString().toInt()
 
                         val intent = Intent(this@HomeDetail, payment::class.java)
-                        intent.putExtra("stadium_id",searchList[0].stadium_id)
+                        intent.putExtra("stadium_id",searchList[0].id)
                         intent.putExtra("reserve_date",searchList[0].reserve_date)
                         intent.putExtra("time_start",searchList[0].time_start)
                         intent.putExtra("time_end",searchList[0].time_end)
-                        intent.putExtra("total_price",total_price)
-                        Toast.makeText(applicationContext, "ส่งไปเเล้วนะ", Toast.LENGTH_SHORT).show()
+                        intent.putExtra("total_price",total_price.toString())
+//                        Toast.makeText(applicationContext, "ส่งไปเเล้วนะ"+total_price, Toast.LENGTH_SHORT).show()
                         this@HomeDetail.startActivity(intent)
                     }
 

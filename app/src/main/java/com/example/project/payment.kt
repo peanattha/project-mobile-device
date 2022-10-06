@@ -22,7 +22,6 @@ class payment : AppCompatActivity() {
     lateinit var binding: ActivityPaymentBinding
     private var selectedImageUri: Uri? = null
     val createClient = paymentAPI.invoke()
-    //    val serv = paymentAPI.create()
     var paymentList = arrayListOf<Bank>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +30,7 @@ class payment : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imageView.setOnClickListener(View.OnClickListener {
-//            loadImage.launch("image/*")
-//            openImageChooser()
+            openImageChooser()
         })
         binding.buttonUpload.setOnClickListener{
 //            uploadImage()
@@ -43,7 +41,13 @@ class payment : AppCompatActivity() {
         val time_end = intent.getStringExtra("time_end")
         val total_price = intent.getStringExtra("total_price")
 
-        binding.resDetails.setText(reserve_date)
+        Toast.makeText(applicationContext, total_price, Toast.LENGTH_SHORT).show()
+
+        binding.stadiumReserve.setText(stadium_id)
+        binding.dateReserve.setText(reserve_date)
+        binding.startReserve.setText(time_start)
+        binding.endReserve.setText(time_end)
+        binding.buttonUpload.text= "ชำระเงิน "+total_price+" บาท"
 
         val mode = Context.MODE_PRIVATE
         val name = "sign_in_preferences"
@@ -67,6 +71,10 @@ class payment : AppCompatActivity() {
                         paymentList.add(Bank(it.bank_admin_id, it.bank_name
                             ,it.account_number,it.firstName,it.lastName,it.qr_code))
                     }
+
+                    binding.accountnumber.setText(paymentList[0].account_number)
+                    binding.bankaccount.setText(paymentList[0].bank_name)
+                    binding.accountname.setText(paymentList[0].firstName+" "+paymentList[0].lastName)
                 }
                 override fun onFailure(call: Call<List<Bank>>, t: Throwable) {
                     Toast.makeText(applicationContext,"Error onFailure " + t.message, Toast.LENGTH_LONG).show()
@@ -92,11 +100,12 @@ class payment : AppCompatActivity() {
             when (requestCode) {
                 REQUEST_CODE_PICK_IMAGE -> {
                     selectedImageUri = data?.data
-                    binding.imageView.setImageURI(selectedImageUri)
+                    binding.qrCode.setImageURI(selectedImageUri)
                 }
             }
         }
     }
+
 //    private fun uploadImage() {
 //        if (selectedImageUri == null) {
 //            binding.root.snackbar("Select an Image First")
@@ -111,8 +120,7 @@ class payment : AppCompatActivity() {
 //        val outputStream = FileOutputStream(file)
 //        inputStream.copyTo(outputStream)
 //
-//        progress_bar.progress = 0
-//        val body = UploadRequestBody(file, "image", this)
+//        val body = UploadRequestBody(file, "image")
 //        createClient.uploadImage(
 //            MultipartBody.Part.createFormData(
 //                "image",
@@ -123,7 +131,6 @@ class payment : AppCompatActivity() {
 //        ).enqueue(object : Callback<UploadResponse> {
 //            override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
 //                binding.root.snackbar(t.message!!)
-//                progress_bar.progress = 0
 //            }
 //
 //            override fun onResponse(
@@ -136,6 +143,5 @@ class payment : AppCompatActivity() {
 //                }
 //            }
 //        })
-//
 //    }
 }

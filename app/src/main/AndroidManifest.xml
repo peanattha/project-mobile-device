@@ -18,6 +18,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".edit_stadium"
+            android:exported="false" />
+        <activity
+            android:name=".stadium_detail"
+            android:exported="false" />
+        <activity
+            android:name=".add_stadium"
+            android:exported="false" />
+        <activity
+            android:name=".manage_stadium"
+            android:exported="false" />
+        <activity
             android:name=".payment"
             android:exported="false" />
         <activity

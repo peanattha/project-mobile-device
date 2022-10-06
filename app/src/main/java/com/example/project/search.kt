@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 class search (
     @Expose
-    @SerializedName("stadium_id") val stadium_id: String,
+    @SerializedName("id") val id: String,
 
     @Expose
     @SerializedName("reserve_date") val reserve_date: String,

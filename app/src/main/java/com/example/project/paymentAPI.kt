@@ -16,7 +16,7 @@ interface paymentAPI {
     fun callpayment(): Call<List<Bank>>
 
 //    @Multipart
-//    @POST("upload")
+//    @POST("upload/")
 //    fun uploadImage(
 //        @Part image: MultipartBody.Part,
 //        @Part("desc") desc: RequestBody

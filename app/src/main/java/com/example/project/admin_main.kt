@@ -42,6 +42,9 @@ class admin_main : AppCompatActivity() {
         binding.manageBank.setOnClickListener {
             startActivity(Intent(applicationContext, manage_bank::class.java))
         }
+        binding.manageStadium.setOnClickListener {
+            startActivity(Intent(applicationContext, manage_stadium::class.java))
+        }
 
     }
 

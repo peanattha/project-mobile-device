@@ -18,6 +18,30 @@ interface stadiumAPI {
         @Field("time_end") time_end: String
     ): Call<search>
 
+    @FormUrlEncoded
+    @POST("stadium")
+    fun insertStadium(
+        @Field("stadium_name") stadium_name: String,
+        @Field("stadium_price") stadium_price: Int,
+        @Field("stadium_img") stadium_img: String,
+        @Field("stadium_detail") stadium_detail: String,
+        @Field("create_at") create_at: String): Call<stadium>
+
+    @FormUrlEncoded
+    @PUT("stadium/{stadium_id}")
+    fun updateStadium(
+        @Path("stadium_id") stadium_id: String,
+        @Field("stadium_name") stadium_name: String,
+        @Field("stadium_price") stadium_price: Int,
+        @Field("stadium_img") stadium_img: String,
+        @Field("stadium_detail") stadium_detail: String,
+        @Field("update_at") update_at: String): Call<stadium>
+
+    @FormUrlEncoded
+    @PUT("stadium/{stadium_id}")
+    fun softDeleteStadium(
+        @Path("stadium_id") stadium_id: String,
+        @Field("delete_at") delete_at: String): Call<stadium>
 
     companion object {
         fun create(): stadiumAPI {
