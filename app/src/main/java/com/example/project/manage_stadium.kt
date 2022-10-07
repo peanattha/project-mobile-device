@@ -28,6 +28,7 @@ class manage_stadium : AppCompatActivity() {
                 DividerItemDecoration.VERTICAL) )
     }
     override fun onResume() {
+        stadiumList.clear()
         super.onResume()
         callStadiumData()
     }

@@ -8,7 +8,7 @@
         <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/drawable/border.xml" value="0.2545" />
         <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/drawable/btn_logout.xml" value="0.2545" />
         <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/drawable/payment_page.xml" value="0.2545" />
-        <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_stadium.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_stadium.xml" value="0.264" />
         <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/layout/activity_admin_main.xml" value="0.264" />
         <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/layout/activity_cancel_reserved_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/natth/AndroidStudioProjects/Project/app/src/main/res/layout/activity_confirme_reserved.xml" value="0.25416666666666665" />
@@ -46,7 +46,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.264" />
+        <option name="scale" value="0.25416666666666665" />
       </ProjectState>
     </option>
   </component>

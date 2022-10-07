@@ -1,12 +1,14 @@
 package com.example.project
 
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 interface stadiumAPI {
-    @GET("allstadiun")
+    @GET("allstadium")
     fun retrieveStadium(): Call<List<stadium>>
 
     @FormUrlEncoded
@@ -19,29 +21,31 @@ interface stadiumAPI {
     ): Call<search>
 
     @FormUrlEncoded
-    @POST("stadium")
-    fun insertStadium(
-        @Field("stadium_name") stadium_name: String,
-        @Field("stadium_price") stadium_price: Int,
-        @Field("stadium_img") stadium_img: String,
-        @Field("stadium_detail") stadium_detail: String,
-        @Field("create_at") create_at: String): Call<stadium>
-
-    @FormUrlEncoded
-    @PUT("stadium/{stadium_id}")
-    fun updateStadium(
-        @Path("stadium_id") stadium_id: String,
-        @Field("stadium_name") stadium_name: String,
-        @Field("stadium_price") stadium_price: Int,
-        @Field("stadium_img") stadium_img: String,
-        @Field("stadium_detail") stadium_detail: String,
-        @Field("update_at") update_at: String): Call<stadium>
-
-    @FormUrlEncoded
     @PUT("stadium/{stadium_id}")
     fun softDeleteStadium(
         @Path("stadium_id") stadium_id: String,
         @Field("delete_at") delete_at: String): Call<stadium>
+
+    @Multipart
+    @POST("/stadium")
+    fun add(
+        @Part image: MultipartBody.Part,
+        @Part("stadium_name") stadium_name: RequestBody,
+        @Part("stadium_price") stadium_price: RequestBody,
+        @Part("stadium_detail") stadium_detail: RequestBody,
+        @Part("create_at") create_at: RequestBody
+    ): Call<UploadResponse>
+
+    @Multipart
+    @PUT("stadium/{stadium_id}")
+    fun updateStadium(
+        @Part image: MultipartBody.Part,
+        @Path("stadium_id") stadium_id: String,
+        @Part("stadium_name") stadium_name: RequestBody,
+        @Part("stadium_price") stadium_price: RequestBody,
+        @Part("stadium_detail") stadium_detail: RequestBody,
+        @Part("update_at") update_at: RequestBody
+    ): Call<UploadResponse>
 
     companion object {
         fun create(): stadiumAPI {
@@ -53,4 +57,5 @@ interface stadiumAPI {
             return serv
         }
     }
+
 }

@@ -52,52 +52,20 @@
                     android:layout_margin="8dp"
                     android:clickable="true">
 
-                    <RelativeLayout
+
+
+                    <!-- Media -->
+                    <ImageView
+                        android:id="@+id/imageView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/stadium1" />
 
-                        <!-- Media -->
-                        <ImageView
-                            android:id="@+id/cardImg"
-                            android:layout_width="match_parent"
-                            android:layout_height="180dp"
-                            android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/stadium1" />
-
-                        <!--                        <LinearLayout-->
-                        <!--                            android:layout_width="match_parent"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:layout_alignParentBottom="true"-->
-                        <!--                            android:layout_marginTop="65dp"-->
-                        <!--                            android:layout_marginBottom="0dp"-->
-                        <!--                            android:orientation="vertical"-->
-                        <!--                            android:padding="16dp">-->
-
-                        <!--                            <TextView-->
-                        <!--                                android:id="@+id/stadiumName"-->
-                        <!--                                android:layout_width="wrap_content"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:text="Stadium1"-->
-                        <!--                                android:textAppearance="?attr/textAppearanceHeadline6"-->
-                        <!--                                android:textColor="#fff"-->
-                        <!--                                android:textSize="20sp" />-->
-
-                        <!--                            <TextView-->
-                        <!--                                android:id="@+id/date"-->
-                        <!--                                android:layout_width="wrap_content"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:layout_marginTop="8dp"-->
-                        <!--                                android:text="15/08/2565"-->
-                        <!--                                android:textColor="#fff"-->
-                        <!--                                android:textSize="14sp" />-->
-
-
-                        <!--                        </LinearLayout>-->
-                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <Button
-                    android:id="@+id/cusSlip"
+                    android:id="@+id/btnSelect"
                     style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -109,26 +77,25 @@
                     android:text="Select new image"
                     app:icon="@drawable/ic_baseline_camera_alt_24"
                     app:iconGravity="textStart"
-                    android:onClick="chooseFile"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:cornerRadius="10dp"
                     android:textSize="16sp" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:hint="เว้นไว้ก่อนเผื่อใส่ลิ้งแทน">
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="12dp"-->
+                <!--                    android:hint="เว้นไว้ก่อนเผื่อใส่ลิ้งแทน">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtImg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/edtImg"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:inputType="text"-->
+                <!--                        android:textSize="16sp" />-->
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
