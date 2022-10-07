@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import com.example.project.databinding.FragmentProfileBinding
 import com.example.project.databinding.FragmentReserveBinding
@@ -70,7 +71,15 @@ class Profile : Fragment() {
     override fun onResume() {
         userList.clear()
         super.onResume()
-        callUserData()
+        val mode = AppCompatActivity.MODE_PRIVATE
+        val name = "sign_in_preferences"
+        val preferences = requireContext().getSharedPreferences(name, mode)
+        val loginStatus: String? = preferences.getString("loginStatus", null)
+        if(loginStatus == null){
+            startActivity(Intent(context, login::class.java))
+        }else{
+            callUserData()
+        }
     }
 
     fun callUserData(){

@@ -17,10 +17,11 @@ class admin_main : AppCompatActivity() {
         binding = ActivityAdminMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val mode = MODE_PRIVATE
+        val name = "sign_in_preferences"
+        val preferences = applicationContext.getSharedPreferences(name, mode)
+
         binding.btnLogout.setOnClickListener {
-            val mode = MODE_PRIVATE
-            val name = "sign_in_preferences"
-            val preferences = applicationContext.getSharedPreferences(name, mode)
             preferences.edit {
                 clear()
             }
@@ -46,6 +47,18 @@ class admin_main : AppCompatActivity() {
             startActivity(Intent(applicationContext, manage_stadium::class.java))
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val mode = MODE_PRIVATE
+        val name = "sign_in_preferences"
+        val preferences = applicationContext.getSharedPreferences(name, mode)
+
+        val loginStatus: String? = preferences.getString("loginStatus", null)
+        if(loginStatus == null){
+            startActivity(Intent(applicationContext, login::class.java))
+        }
     }
 
 }

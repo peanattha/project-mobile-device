@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 interface stadiumAPI {
-    @GET("allstadiun")//แก้ตรงนี้
+    @GET("allstadiun")
     fun retrieveStadium(): Call<List<stadium>>
 
     @FormUrlEncoded

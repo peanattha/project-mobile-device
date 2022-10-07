@@ -2,8 +2,9 @@ package com.example.project
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import okhttp3.RequestBody
 
-class Bank(
+data class Bank(
     @Expose
     @SerializedName("bank_admin_id") val bank_admin_id: String,
 
@@ -20,5 +21,11 @@ class Bank(
     @SerializedName("lastName") val lastName: String,
 
     @Expose
-    @SerializedName("qr_code") val qr_code: String
-){}
+    @SerializedName("qr_code") val qr_code: String,
+
+){
+    val message: String
+        get() {
+            TODO()
+        }
+}
