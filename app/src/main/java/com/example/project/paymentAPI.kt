@@ -6,24 +6,37 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.Part
+import retrofit2.http.*
 
 interface paymentAPI {
     @GET("bank/")
     fun callpayment(): Call<List<Bank>>
 
-//    @Multipart
-//    @POST("upload/")
-//    fun uploadImage(
-//        @Part image: MultipartBody.Part,
-//        @Part("desc") desc: RequestBody
-//    ): Call<UploadResponse>
+    @Multipart
+    @POST("upload")
+    fun uploadImage(
+        @Part image: MultipartBody.Part,
+        @Part("desc") desc: RequestBody
+    ): Call<UploadResponse>
+
+
+    @Multipart
+    @POST("paymentadd")
+    fun insertpay(
+        @Part image: MultipartBody.Part,
+        @Part("bank_admin_id") bank_admin_id: RequestBody,
+        @Part("payment_status") payment_status: RequestBody,
+        @Part("reserve_id") reserve_id: RequestBody,
+        @Part("user_id") user_id: RequestBody,
+        @Part("stadium_id") stadium_id: RequestBody,
+        @Part("total_price") total_price: RequestBody,
+        @Part("reserve_date") reserve_date: RequestBody,
+        @Part("time_start") time_start: RequestBody,
+        @Part("time_end") time_end: RequestBody
+    ): Call<UploadResponse>
 
     companion object {
-        fun invoke(): paymentAPI {
+        operator fun invoke(): paymentAPI {
             val gson = GsonBuilder()
                 .setLenient()
                 .create()

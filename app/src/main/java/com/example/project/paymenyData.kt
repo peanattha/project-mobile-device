@@ -37,4 +37,8 @@ data class paymentData (
     @Expose
     @SerializedName("time_end") val time_end: String,
 ){
+    val message: String
+        get() {
+            TODO()
+        }
 }

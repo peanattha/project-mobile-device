@@ -36,4 +36,6 @@ data class Reserved(
 
     @Expose
     @SerializedName("payment_id") val payment_id: String,
-){}
+){
+
+}
