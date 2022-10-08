@@ -13,6 +13,7 @@ import retrofit2.Response
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import com.example.project.url.baseUrl
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -30,13 +31,12 @@ class manage_bank : AppCompatActivity() {
     private var selectedImageUri: Uri? = null
     val serv = BankAdminAPI.create()
 
-    //    val serv = BankAdminAPI()
     var BankDataarrayList = arrayListOf<Bank>()
 
-    //    val createClient = MyAPI.invoke()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityManageBankBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
         callBankData()
 
@@ -228,7 +228,7 @@ class manage_bank : AppCompatActivity() {
                                 binding.editBankNumber.setText(BankDataarrayList[0].account_number)
                                 binding.editBankAccountFirstName.setText(BankDataarrayList[0].firstName)
                                 binding.editBankAccountLastName.setText(BankDataarrayList[0].lastName)
-                                Glide.with(applicationContext).load(BankDataarrayList[0].qr_code)
+                                Glide.with(applicationContext).load(baseUrl+BankDataarrayList[0].qr_code)
                                     .into(binding.qrCode)
                             }
                         }

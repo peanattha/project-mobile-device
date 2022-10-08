@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.example.project.databinding.ActivityEditStadiumBinding
+import com.example.project.url.baseUrl
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -32,6 +33,7 @@ class edit_stadium : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingEditStadium = ActivityEditStadiumBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(bindingEditStadium.root)
 
         val loadImage = registerForActivityResult(
@@ -41,7 +43,7 @@ class edit_stadium : AppCompatActivity() {
                 selectedImageUri = it
             })
 
-        Glide.with(applicationContext).load(intent.getStringExtra("imgData")).into(bindingEditStadium.imageView)
+        Glide.with(applicationContext).load(baseUrl+intent.getStringExtra("imgData")).into(bindingEditStadium.imageView)
         bindingEditStadium.edtId.setText (intent.getStringExtra("idData").toString())
         bindingEditStadium.edtId.isEnabled=false
         bindingEditStadium.edtName.setText (intent.getStringExtra("nameData"))
@@ -49,13 +51,11 @@ class edit_stadium : AppCompatActivity() {
         bindingEditStadium.edtDetail.setText (intent.getStringExtra("detailData"))
 
         bindingEditStadium.btnSelect.setOnClickListener(View.OnClickListener {
-//            loadImage.launch("image/*")
             openImageChooser()
         })
         bindingEditStadium.btnSave.setOnClickListener{
             saveStadium()
         }
-//
     }
 
     companion object {
@@ -91,18 +91,13 @@ class edit_stadium : AppCompatActivity() {
         val date = Date()
         val currentDate = formatter.format(date)
 
-//        if (selectedImageUri == null) {
-//            bindingEditStadium.root.snackbar("Select an Image First")
-//            return
-//        }
-//
+
         val parcelFileDescriptor = contentResolver.openFileDescriptor(selectedImageUri!!, "r", null) ?: return
         val myBuilder = AlertDialog.Builder(this)
         val inputStream = FileInputStream(parcelFileDescriptor.fileDescriptor)
         val file = File(cacheDir, contentResolver.getFileName(selectedImageUri!!))
         val outputStream = FileOutputStream(file)
         inputStream.copyTo(outputStream)
-//        progress_bar.progress = 0
         val body = UploadRequestBody(file, "image")
 
         myBuilder.apply {
@@ -124,9 +119,7 @@ class edit_stadium : AppCompatActivity() {
 
                 ).enqueue(object : Callback<UploadResponse> {
                     override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-//                binding.root.snackbar(t.message!!)
                         Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-//                progress_bar.progress = 0
                     }
 
                     override fun onResponse(

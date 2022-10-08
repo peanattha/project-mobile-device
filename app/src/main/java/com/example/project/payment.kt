@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.project.databinding.ActivityPaymentBinding
+import com.example.project.url.baseUrl
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -34,6 +35,8 @@ class payment : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPaymentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
+        callpayment()
 
         binding.imageView.setOnClickListener(View.OnClickListener {
             openImageChooser()
@@ -62,11 +65,6 @@ class payment : AppCompatActivity() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
-        callpayment()
-    }
-
     fun callpayment(){
         paymentList.clear()
         createClient.callpayment()
@@ -80,7 +78,7 @@ class payment : AppCompatActivity() {
                     binding.accountnumber.setText("เลขบัญชี : " + paymentList[0].account_number)
                     binding.bankaccount.setText("ธนาคาร : " + paymentList[0].bank_name)
                     binding.accountname.setText("ชื่อ : " + paymentList[0].firstName+" "+paymentList[0].lastName)
-                    Glide.with(applicationContext).load(paymentList[0].qr_code).into(binding.qrCode)
+                    Glide.with(applicationContext).load(baseUrl+paymentList[0].qr_code).into(binding.qrCode)
 
 
                 }
@@ -93,6 +91,7 @@ class payment : AppCompatActivity() {
     companion object {
         const val REQUEST_CODE_PICK_IMAGE = 101
     }
+
     private fun openImageChooser() {
         Intent(Intent.ACTION_PICK).also {
             it.type = "image/*"

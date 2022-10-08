@@ -18,6 +18,7 @@ class cancel_reserved_admin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCancelReservedAdminBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
 
         binding.recyclerView.adapter = ReservedAdapter(this.reservedListAdmin,applicationContext)

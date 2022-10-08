@@ -21,9 +21,9 @@ class stadium_detail : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         bindingStadiumDetail = ActivityStadiumDetailBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView( bindingStadiumDetail.root)
 
-//        val updateData = intent.getStringExtra("updateAtData")
         val id = intent.getStringExtra("idData").toString()
         val name = intent.getStringExtra("nameData")
         val price = intent.getStringExtra("priceData").toString()
@@ -34,16 +34,9 @@ class stadium_detail : AppCompatActivity() {
         bindingStadiumDetail.stadiumNameDPage.text = "ชื่อสนาม : ${name}"
         bindingStadiumDetail.stadiumPriceDPage.text = "ราคา : ${price}/2 ชม."
         bindingStadiumDetail.stadiumDetailDPage.text = "รายละเอียด : ${detail}"
-//        if(updateData!=null){
-//            bindingStadiumDetail.stadiumUpdateDPage.text = "แก้ไขเมื่อ ${updateData}"
-//        }
 
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        recreate()
-//    }
 
     fun deleteStadium(v: View) {
         val formatter = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
@@ -54,7 +47,6 @@ class stadium_detail : AppCompatActivity() {
             setTitle("Warning")
             setMessage("Do you want to delete the stadium?")
             setNegativeButton("Yes") { _ , _ ->
-                //ลบข้อมูล
                 stadiumApi.softDeleteStadium(
                     intent.getStringExtra("idData").toString(),
                     currentDate

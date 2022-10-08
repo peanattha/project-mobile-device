@@ -21,7 +21,7 @@ interface stadiumAPI {
     ): Call<search>
 
     @FormUrlEncoded
-    @PUT("stadium/{stadium_id}")
+    @PUT("delstadium/{stadium_id}")
     fun softDeleteStadium(
         @Path("stadium_id") stadium_id: String,
         @Field("delete_at") delete_at: String): Call<stadium>

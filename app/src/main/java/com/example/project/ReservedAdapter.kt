@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.project.databinding.ResveredItemLayoutBinding
+import com.example.project.url.baseUrl
 
 class ReservedAdapter(val reservedList : ArrayList<Reserved>?,val context: Context)
     : RecyclerView.Adapter<ReservedAdapter.ViewHolder>() {
@@ -41,7 +42,7 @@ class ReservedAdapter(val reservedList : ArrayList<Reserved>?,val context: Conte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val binding = holder.binding
-        Glide.with(context).load(reservedList!![position].stadium_img).into(binding.cardImg)
+        Glide.with(context).load(baseUrl +reservedList!![position].stadium_img).into(binding.cardImg)
         binding.stadiumName.text = reservedList!![position].stadium_name.capitalize()
         binding.date.text = "Date: " +reservedList!![position].reserve_date.toString().substring(0, 10)
         binding.time.text = "Time: " +reservedList!![position].time_start+":00 - "+reservedList!![position].time_end+":00"

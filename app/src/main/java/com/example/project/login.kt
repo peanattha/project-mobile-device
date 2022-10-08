@@ -22,7 +22,7 @@ class login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(applicationContext, register::class.java))
         }

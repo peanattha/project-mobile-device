@@ -43,7 +43,6 @@ class UploadRequestBody(
         private val total: Long
     ) : Runnable {
         override fun run() {
-//            callback.onProgressUpdate((100 * uploaded / total).toInt())
         }
     }
 

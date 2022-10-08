@@ -21,6 +21,7 @@ class HomeDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingDetail = ActivityHomeDetailBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(bindingDetail.root)
 
         val sub = resources.getStringArray(R.array.TimeSelected)
@@ -69,18 +70,20 @@ class HomeDetail : AppCompatActivity() {
                         if(response.isSuccessful){
                             searchList.add(search(response.body()?.id.toString(), response.body()?.reserve_date.toString()
                                 ,response.body()?.time_start.toString(),response.body()?.time_end.toString()))
-                        }
-                        var sum_time = bindingDetail.selecttimeend.text.toString().toInt() - bindingDetail.selectstarttime.text.toString().toInt()
-                        var total_price = sum_time * std_price.toString().toInt()
 
-                        val intent = Intent(this@HomeDetail, payment::class.java)
-                        intent.putExtra("stadium_id",searchList[0].id)
-                        intent.putExtra("reserve_date",searchList[0].reserve_date)
-                        intent.putExtra("time_start",searchList[0].time_start)
-                        intent.putExtra("time_end",searchList[0].time_end)
-                        intent.putExtra("total_price",total_price.toString())
-//                        Toast.makeText(applicationContext, "ส่งไปเเล้วนะ"+total_price, Toast.LENGTH_SHORT).show()
-                        this@HomeDetail.startActivity(intent)
+                            var sum_time = bindingDetail.selecttimeend.text.toString().toInt() - bindingDetail.selectstarttime.text.toString().toInt()
+                            var total_price = sum_time * std_price.toString().toInt()
+
+                            val intent = Intent(this@HomeDetail, payment::class.java)
+                            intent.putExtra("stadium_id",searchList[0].id)
+                            intent.putExtra("reserve_date",searchList[0].reserve_date)
+                            intent.putExtra("time_start",searchList[0].time_start)
+                            intent.putExtra("time_end",searchList[0].time_end)
+                            intent.putExtra("total_price",total_price.toString())
+                            this@HomeDetail.startActivity(intent)
+                        }else{
+                            Toast.makeText(applicationContext, "ไม่สามารถจองได้มีคนจองเเล้ว", Toast.LENGTH_SHORT).show()
+                        }
                     }
 
                     override fun onFailure(call: Call<search>, t: Throwable){

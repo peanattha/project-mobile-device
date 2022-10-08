@@ -31,6 +31,7 @@ class add_stadium : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingAddStadium = ActivityAddStadiumBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(bindingAddStadium.root)
 
         val loadImage = registerForActivityResult(
@@ -40,7 +41,6 @@ class add_stadium : AppCompatActivity() {
                 selectedImageUri = it
             })
         bindingAddStadium.btnSelect.setOnClickListener(View.OnClickListener {
-//            loadImage.launch("image/*")
             openImageChooser()
         })
         bindingAddStadium.btnAdd.setOnClickListener{
@@ -69,61 +69,6 @@ class add_stadium : AppCompatActivity() {
             }
         }
     }
-
-//    private fun uploadImage() {
-//
-//        val stadium_name = bindingAddStadium.addName.text.toString()
-//        val stadium_price = bindingAddStadium.addPrice.text.toString()
-//        val stadium_detail = bindingAddStadium.addDetail.text.toString()
-//
-//        val formatter = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
-//        val date = Date()
-//        val currentDate = formatter.format(date)
-//
-//        if (selectedImageUri == null) {
-//            bindingAddStadium.root.snackbar("Select an Image First")
-//            return
-//        }
-//
-//        val parcelFileDescriptor = contentResolver.openFileDescriptor(selectedImageUri!!, "r", null) ?: return
-//
-//        val inputStream = FileInputStream(parcelFileDescriptor.fileDescriptor)
-//        val file = File(cacheDir, contentResolver.getFileName(selectedImageUri!!))
-//        val outputStream = FileOutputStream(file)
-//        inputStream.copyTo(outputStream)
-//
-////        progress_bar.progress = 0
-//        val body = UploadRequestBody(file, "image", this)
-//        MyAPI().add(
-//            MultipartBody.Part.createFormData(
-//                "image",
-//                file.name,
-//                body
-//            ),
-//            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), stadium_name),
-//            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), stadium_price),
-//            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), stadium_detail),
-//            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), currentDate)
-//
-//        ).enqueue(object : Callback<UploadResponse> {
-//            override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-////                binding.root.snackbar(t.message!!)
-//                Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-////                progress_bar.progress = 0
-//            }
-//
-//            override fun onResponse(
-//                call: Call<UploadResponse>,
-//                response: Response<UploadResponse>
-//            ) {
-//                response.body()?.let {
-//                    Toast.makeText(applicationContext, it.message, Toast.LENGTH_LONG).show()
-//                }
-//            }
-//        })
-//
-//    }
-
     private fun addStadium() {
         val stadium_name = bindingAddStadium.addName.text.toString()
         val stadium_price = bindingAddStadium.addPrice.text.toString()
@@ -144,7 +89,6 @@ class add_stadium : AppCompatActivity() {
             val file = File(cacheDir, contentResolver.getFileName(selectedImageUri!!))
             val outputStream = FileOutputStream(file)
             inputStream.copyTo(outputStream)
-//        progress_bar.progress = 0
             val body = UploadRequestBody(file, "image")
 
             myBuilder.apply {
@@ -165,9 +109,7 @@ class add_stadium : AppCompatActivity() {
 
                     ).enqueue(object : Callback<UploadResponse> {
                         override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-//                binding.root.snackbar(t.message!!)
                             Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-//                progress_bar.progress = 0
                         }
 
                         override fun onResponse(

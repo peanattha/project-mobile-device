@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.project.databinding.StadiumItemLayoutBinding
+import com.example.project.url.baseUrl
 
 class stadiumAdapter (val stadiumList : ArrayList<stadium>?, val context: Context)
     : RecyclerView.Adapter<stadiumAdapter.ViewHolder>(){
@@ -37,7 +38,7 @@ class stadiumAdapter (val stadiumList : ArrayList<stadium>?, val context: Contex
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val binding = holder.binding
-        Glide.with(context).load(stadiumList!![position].stadium_img).into(binding.cardImg)
+        Glide.with(context).load(baseUrl +stadiumList!![position].stadium_img).into(binding.cardImg)
         binding.stadiumname.text = stadiumList!![position].stadium_name
         binding.stadiumprice.text = "Price : " +stadiumList!![position].stadium_price+" Bath Per 1 Hr. "
         binding.stadiumdetail.text = "Details : " +stadiumList!![position].stadium_detail

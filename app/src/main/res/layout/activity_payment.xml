@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fillViewport="true">
+    android:layout_height="match_parent"
+    tools:context=".add_stadium">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent"
+        android:src="@drawable/wallpaper"
+        android:scaleType="centerCrop"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="900dp"
-            android:src="@drawable/wallpaper"
-            android:scaleType="centerCrop"
-            tools:ignore="MissingConstraints" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_marginHorizontal="30dp"
             android:orientation="vertical"
@@ -201,28 +201,30 @@
                     android:text="ถ้าไม่แนบหลักฐานการชำระเงินจะไม่สามารถทำรายการต่อไปได้"
                     android:textColor="#00165C"
                     android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/button_Upload"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#161D6F"
+                    android:letterSpacing="0"
+                    android:onClick="pay"
+                    android:paddingHorizontal="90dp"
+                    android:paddingVertical="10dp"
+                    android:text="ชำระเงิน"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
+                    app:strokeWidth="1dp" />
             </LinearLayout>
-
-            <Button
-                android:id="@+id/button_Upload"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#161D6F"
-                android:letterSpacing="0"
-                android:onClick="pay"
-                android:paddingHorizontal="90dp"
-                android:paddingVertical="10dp"
-                android:text="ชำระเงิน"
-                android:textAllCaps="false"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:cornerRadius="10dp"
-                app:strokeWidth="1dp" />
-
-
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+</RelativeLayout>
+
+
+

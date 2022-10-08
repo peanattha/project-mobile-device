@@ -43,8 +43,7 @@
                 android:orientation="vertical"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="50dp"
-                android:padding="30dp"
-                >
+                android:padding="30dp">
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card"
                     android:layout_width="match_parent"
@@ -52,9 +51,6 @@
                     android:layout_margin="8dp"
                     android:clickable="true">
 
-
-
-                    <!-- Media -->
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
@@ -81,21 +77,6 @@
                     android:textColor="@color/white"
                     app:cornerRadius="10dp"
                     android:textSize="16sp" />
-
-                <!--                <com.google.android.material.textfield.TextInputLayout-->
-                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginTop="12dp"-->
-                <!--                    android:hint="เว้นไว้ก่อนเผื่อใส่ลิ้งแทน">-->
-
-                <!--                    <com.google.android.material.textfield.TextInputEditText-->
-                <!--                        android:id="@+id/edtImg"-->
-                <!--                        android:layout_width="match_parent"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:inputType="text"-->
-                <!--                        android:textSize="16sp" />-->
-                <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -173,130 +154,10 @@
                     android:textSize="16sp"
                     app:cornerRadius="10dp"
                     tools:ignore="OnClick" />
-                <!--                <Button-->
-                <!--                    android:id="@+id/btnReset"-->
-                <!--                    style="@style/Widget.MaterialComponents.Button"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginHorizontal="10dp"-->
-                <!--                    android:backgroundTint="#D54141"-->
-                <!--                    android:letterSpacing="0"-->
-                <!--                    android:onClick="reset"-->
-                <!--                    android:padding="10dp"-->
-                <!--                    android:text="Cancle"-->
-                <!--                    android:textAllCaps="false"-->
-                <!--                    android:textColor="@color/white"-->
-                <!--                    android:textSize="16sp"-->
-                <!--                    app:cornerRadius="10dp"-->
-                <!--                    tools:ignore="OnClick" />-->
+
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
 </RelativeLayout>
-
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--    xmlns:tools="http://schemas.android.com/tools"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    android:orientation="vertical"-->
-    <!--    android:padding="15dp"-->
-    <!--    tools:context=".EditStadiumActivity">-->
-    <!--    <TextView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Add Stadium"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textSize="25sp"-->
-    <!--        android:textStyle="bold" />-->
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:hint="Student ID"-->
-    <!--        android:layout_marginTop="12dp">-->
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:id="@+id/edtId"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="text"-->
-    <!--            android:textSize="20sp"/>-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:hint="Student Name"-->
-    <!--        android:layout_marginTop="12dp">-->
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:id="@+id/edtName"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="text"-->
-    <!--            android:textSize="20sp"/>-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:hint="Stadium Price"-->
-    <!--        android:layout_marginTop="12dp">-->
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:id="@+id/edtPrice"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="number"-->
-    <!--            android:textSize="20sp"/>-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:hint="Stadium Image"-->
-    <!--        android:layout_marginTop="12dp">-->
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:id="@+id/edtImg"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="text"-->
-    <!--            android:textSize="20sp"/>-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:hint="Stadium Detail"-->
-    <!--        android:layout_marginTop="12dp">-->
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:id="@+id/edtDetail"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="text|textMultiLine"-->
-    <!--            android:textSize="20sp"/>-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-    <!--    <androidx.appcompat.widget.AppCompatButton-->
-    <!--        android:id="@+id/btnAdd"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:background="#69F0AE"-->
-    <!--        android:text="เซฟฟฟฟฟ"-->
-    <!--        android:textSize="20sp"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:onClick="saveStadium" />-->
-    <!--    <androidx.appcompat.widget.AppCompatButton-->
-    <!--        android:id="@+id/btnCancel"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:background="#F88484"-->
-    <!--        android:text="Reset"-->
-    <!--        android:textSize="20sp"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        />-->
-    <!--</LinearLayout>-->

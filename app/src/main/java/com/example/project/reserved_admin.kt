@@ -17,8 +17,8 @@ class reserved_admin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReservedAdminBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
-
 
         binding.recyclerView.adapter = ReservedAdapter(this.reservedListAdmin,applicationContext)
         binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)

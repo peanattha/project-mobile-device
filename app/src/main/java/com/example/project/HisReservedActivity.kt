@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.bumptech.glide.annotation.GlideModule
 import com.example.project.databinding.ActivityHisReservedBinding
+import com.example.project.url.baseUrl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +31,7 @@ class HisReservedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingHisResDetail = ActivityHisReservedBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(bindingHisResDetail.root)
 
         val payment_id = intent.getStringExtra("payment_id")
@@ -48,8 +50,8 @@ class HisReservedActivity : AppCompatActivity() {
         bindingHisResDetail.date.setText(reserve_date_format)
         bindingHisResDetail.time.setText("Time: "+time_start+":00 - "+time_end+":00")
         bindingHisResDetail.price.setText("Price: "+total_price+" Bath")
-        Glide.with(applicationContext).load(slip_img).into(bindingHisResDetail.slip)
-        Glide.with(applicationContext).load(stadium_img).into(bindingHisResDetail.cardImg)
+        Glide.with(applicationContext).load(baseUrl+slip_img).into(bindingHisResDetail.slip)
+        Glide.with(applicationContext).load(baseUrl+stadium_img).into(bindingHisResDetail.cardImg)
 
         val zoneId:ZoneId = ZoneId.of( "America/Montreal" );
         val today:LocalDate = LocalDate.now( zoneId );
@@ -63,7 +65,7 @@ class HisReservedActivity : AppCompatActivity() {
         val is_admin: String? = preferences.getString("is_admin", null)
 
         val btnCancel = findViewById<View>(R.id.btnCancel) as Button
-        if ((d2?.compareTo(today)!! >0) && payment_status.toString() == "1"){
+        if ((d2?.compareTo(today)!! >0) && payment_status.toString() == "1" || payment_status.toString() == "4"){
             btnCancel.setVisibility(VISIBLE)
             btnCancel.setText("Cancel")
             btnCancel.setBackgroundColor(Color.RED)

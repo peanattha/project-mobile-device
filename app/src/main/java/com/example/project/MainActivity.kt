@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         val mode = Context.MODE_PRIVATE
         val name = "sign_in_preferences"
         val preferences = applicationContext.getSharedPreferences(name, mode)

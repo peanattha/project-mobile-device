@@ -44,7 +44,7 @@ class Home : Fragment() {
                     call: Call<List<stadium>>,
                     response: Response<List<stadium>>
                 ) {
-                    response.body()?.forEach {//ลูปข้อมูล
+                    response.body()?.forEach {
                         stadiumList.add(
                             stadium(
                                 it.stadium_id,
@@ -53,11 +53,9 @@ class Home : Fragment() {
                                 it.stadium_img,
                                 it.stadium_detail
                             )
-                        )//นำข้อมูลที่ลูปมาเก็บไว้
+                        )
                     }
-                    //// Set Data to RecyclerRecyclerView
                     bindingHome.recyclerView.adapter = stadiumAdapter(stadiumList, requireContext())
-//                    bindingHome.TextPage.text = "สนามทั้งหมด : "+ stadiumList.size.toString()
                 }
                 override fun onFailure(call: Call<List<stadium>>, t: Throwable) {
                     Toast.makeText(

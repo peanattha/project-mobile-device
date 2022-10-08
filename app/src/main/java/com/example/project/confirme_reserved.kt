@@ -18,6 +18,7 @@ class confirme_reserved : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConfirmeReservedBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
 
         binding.recyclerView.adapter = ReservedAdapter(this.reservedListAdmin,applicationContext)

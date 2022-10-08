@@ -20,6 +20,7 @@ class manage_stadium : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityManageStadiumBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root )
 
         binding.stadiumRecycleView.layoutManager = LinearLayoutManager(applicationContext)
