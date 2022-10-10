@@ -36,14 +36,17 @@ class Profile : Fragment() {
             if(mail.isEmpty() || fname.isEmpty() || lname.isEmpty() || tel.isEmpty()){
                 Toast.makeText(context, "Input is NULL", Toast.LENGTH_SHORT).show()
             }else{
-                serv.editUser(userList[0].user_id,mail,fname
-                    ,lname,tel)
+                serv.editUser(userList[0].user_id,
+                    mail,
+                    fname,
+                    lname,
+                    tel)
                     .enqueue(object :Callback<User>{
                         override fun onResponse(call: Call<User>, response: Response<User>) {
                             if (response.isSuccessful){
                                 Toast.makeText(context,"isSuccessful", Toast.LENGTH_LONG).show()
                             }else{
-                                Toast.makeText(context,"Error onFailure ", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context,"Email Duplicate", Toast.LENGTH_LONG).show()
                             }
                         }
                         override fun onFailure(call: Call<User>, t: Throwable) {

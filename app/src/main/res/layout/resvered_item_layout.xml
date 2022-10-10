@@ -22,12 +22,14 @@
                     android:layout_height="180dp"
                     android:src="@drawable/stadium1"
                     android:scaleType="centerCrop" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
                     android:orientation="vertical"
-                    android:layout_marginTop="65dp"
                     android:padding="16dp">
+
                     <TextView
                         android:id="@+id/stadiumName"
                         android:layout_width="wrap_content"
@@ -35,6 +37,7 @@
                         android:text="Stadium1"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textColor="#fff" />
+
                     <TextView
                         android:id="@+id/date"
                         android:layout_width="wrap_content"
@@ -42,12 +45,21 @@
                         android:layout_marginTop="8dp"
                         android:text="15/08/2565"
                         android:textColor="#fff" />
+
                     <TextView
                         android:id="@+id/time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="13.00 - 15.00 น."
+                        android:textColor="#fff" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="ชำระเงินเสร็จสิ้น"
                         android:textColor="#fff" />
                 </LinearLayout>
             </RelativeLayout>

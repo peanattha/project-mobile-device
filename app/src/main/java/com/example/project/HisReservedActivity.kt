@@ -65,38 +65,97 @@ class HisReservedActivity : AppCompatActivity() {
         val is_admin: String? = preferences.getString("is_admin", null)
 
         val btnCancel = findViewById<View>(R.id.btnCancel) as Button
-        if ((d2?.compareTo(today)!! >0) && payment_status.toString() == "1" || payment_status.toString() == "4"){
+        val btnSec = findViewById<View>(R.id.btnSec) as Button
+        if (payment_status.toString() == "4" && is_admin == "1"){
             btnCancel.setVisibility(VISIBLE)
-            btnCancel.setText("Cancel")
-            btnCancel.setBackgroundColor(Color.RED)
+            btnCancel.setText("Confirme Reserved")
+            btnSec.setVisibility(VISIBLE)
+            btnSec.setText("Cancel Reserved")
+            btnCancel.setBackgroundColor(Color.GREEN)
+            btnSec.setBackgroundColor(Color.RED)
             bindingHisResDetail.btnCancel.setOnClickListener {
+                val myBuilder = AlertDialog.Builder(this)
+                myBuilder.apply {
+                    setTitle("Warning")
+                    setMessage("คุณเเน่ใจที่จะยืนยันการจอง ?")
+                    setNegativeButton("Yes") { _, _ ->
+                        serv.cancelReserved(payment_id.toString(), "1")
+                            .enqueue(object : Callback<Reserved> {
+                                override fun onResponse(
+                                    call: Call<Reserved>,
+                                    response: Response<Reserved>
+                                ) {
+                                    if (response.isSuccessful) {
+                                        Toast.makeText(
+                                            applicationContext,
+                                            "Successful",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    } else {
+                                        Toast.makeText(
+                                            applicationContext,
+                                            "Error onFailure ",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<Reserved>, t: Throwable) {
+                                    Toast.makeText(
+                                        applicationContext, "Error onFailure " + t.message,
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            })
+                        finish()
+                    }
+                    setPositiveButton("No") { dialog, _ -> dialog.cancel() }
+                    show()
+                }
+            }
+            bindingHisResDetail.btnSec.setOnClickListener {
                 val myBuilder = AlertDialog.Builder(this)
                 myBuilder.apply {
                     setTitle("Warning")
                     setMessage("คุณเเน่ใจที่จะยกเลิกการจอง ?")
                     setNegativeButton("Yes") { _, _ ->
-                        serv.cancelReserved(payment_id.toString(),"2")
-                            .enqueue(object :Callback<Reserved>{
-                                override fun onResponse(call: Call<Reserved>, response: Response<Reserved>) {
-                                    if (response.isSuccessful){
-                                        Toast.makeText(applicationContext,"Successful", Toast.LENGTH_SHORT).show()
-                                    }else{
-                                        Toast.makeText(applicationContext,"Error onFailure ", Toast.LENGTH_SHORT).show()
+                        serv.cancelReserved(payment_id.toString(), "3")
+                            .enqueue(object : Callback<Reserved> {
+                                override fun onResponse(
+                                    call: Call<Reserved>,
+                                    response: Response<Reserved>
+                                ) {
+                                    if (response.isSuccessful) {
+                                        Toast.makeText(
+                                            applicationContext,
+                                            "Successful",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    } else {
+                                        Toast.makeText(
+                                            applicationContext,
+                                            "Error onFailure ",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     }
                                 }
+
                                 override fun onFailure(call: Call<Reserved>, t: Throwable) {
-                                    Toast.makeText(applicationContext,"Error onFailure " + t.message,
-                                        Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        applicationContext, "Error onFailure " + t.message,
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             })
                         finish()
                     }
-                    setPositiveButton ("No"){ dialog, _->dialog.cancel()}
+                    setPositiveButton("No") { dialog, _ -> dialog.cancel() }
                     show()
                 }
             }
         }else if(payment_status.toString() == "2" && is_admin == "1"){
             btnCancel.setVisibility(VISIBLE)
+            btnSec.setVisibility(INVISIBLE)
             btnCancel.setText("Confirme Cancel")
             btnCancel.setBackgroundColor(Color.RED)
             bindingHisResDetail.btnCancel.setOnClickListener {
@@ -139,52 +198,101 @@ class HisReservedActivity : AppCompatActivity() {
                     show()
                 }
             }
-        }else if(payment_status.toString() == "4" && is_admin == "1") {
-            btnCancel.setVisibility(VISIBLE)
-            btnCancel.setText("Confirme Reserved")
-            btnCancel.setBackgroundColor(Color.GREEN)
-            bindingHisResDetail.btnCancel.setOnClickListener {
-                val myBuilder = AlertDialog.Builder(this)
-                myBuilder.apply {
-                    setTitle("Warning")
-                    setMessage("คุณเเน่ใจที่จะยืนยันการจอง ?")
-                    setNegativeButton("Yes") { _, _ ->
-                        serv.cancelReserved(payment_id.toString(), "1")
-                            .enqueue(object : Callback<Reserved> {
-                                override fun onResponse(
-                                    call: Call<Reserved>,
-                                    response: Response<Reserved>
-                                ) {
-                                    if (response.isSuccessful) {
+        }else if((d2?.compareTo(today)!! >0) && payment_status.toString() == "1" || payment_status.toString() == "4") {
+            if(is_admin == "0"){
+                btnCancel.setVisibility(VISIBLE)
+                btnCancel.setText("Cancel")
+                btnSec.setVisibility(INVISIBLE)
+                btnCancel.setBackgroundColor(Color.RED)
+                bindingHisResDetail.btnCancel.setOnClickListener {
+                    val myBuilder = AlertDialog.Builder(this)
+                    myBuilder.apply {
+                        setTitle("Warning")
+                        setMessage("คุณเเน่ใจที่จะยกเลิกการจอง ?")
+                        setNegativeButton("Yes") { _, _ ->
+                            serv.cancelReserved(payment_id.toString(), "2")
+                                .enqueue(object : Callback<Reserved> {
+                                    override fun onResponse(
+                                        call: Call<Reserved>,
+                                        response: Response<Reserved>
+                                    ) {
+                                        if (response.isSuccessful) {
+                                            Toast.makeText(
+                                                applicationContext,
+                                                "Successful",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        } else {
+                                            Toast.makeText(
+                                                applicationContext,
+                                                "Error onFailure ",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    }
+
+                                    override fun onFailure(call: Call<Reserved>, t: Throwable) {
                                         Toast.makeText(
-                                            applicationContext,
-                                            "Successful",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    } else {
-                                        Toast.makeText(
-                                            applicationContext,
-                                            "Error onFailure ",
+                                            applicationContext, "Error onFailure " + t.message,
                                             Toast.LENGTH_SHORT
                                         ).show()
                                     }
-                                }
-
-                                override fun onFailure(call: Call<Reserved>, t: Throwable) {
-                                    Toast.makeText(
-                                        applicationContext, "Error onFailure " + t.message,
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            })
-                        finish()
+                                })
+                            finish()
+                        }
+                        setPositiveButton("No") { dialog, _ -> dialog.cancel() }
+                        show()
                     }
-                    setPositiveButton("No") { dialog, _ -> dialog.cancel() }
-                    show()
+                }
+            }else{
+                btnCancel.setVisibility(VISIBLE)
+                btnCancel.setText("Cancel by Admin")
+                btnSec.setVisibility(INVISIBLE)
+                btnCancel.setBackgroundColor(Color.RED)
+                bindingHisResDetail.btnCancel.setOnClickListener {
+                    val myBuilder = AlertDialog.Builder(this)
+                    myBuilder.apply {
+                        setTitle("Warning")
+                        setMessage("คุณเเน่ใจที่จะยกเลิกการจอง ?")
+                        setNegativeButton("Yes") { _, _ ->
+                            serv.cancelReserved(payment_id.toString(), "3")
+                                .enqueue(object : Callback<Reserved> {
+                                    override fun onResponse(
+                                        call: Call<Reserved>,
+                                        response: Response<Reserved>
+                                    ) {
+                                        if (response.isSuccessful) {
+                                            Toast.makeText(
+                                                applicationContext,
+                                                "Successful",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        } else {
+                                            Toast.makeText(
+                                                applicationContext,
+                                                "Error onFailure ",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    }
+
+                                    override fun onFailure(call: Call<Reserved>, t: Throwable) {
+                                        Toast.makeText(
+                                            applicationContext, "Error onFailure " + t.message,
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                })
+                            finish()
+                        }
+                        setPositiveButton("No") { dialog, _ -> dialog.cancel() }
+                        show()
+                    }
                 }
             }
         }else{
             btnCancel.setVisibility(INVISIBLE)
+            btnSec.setVisibility(INVISIBLE)
         }
     }
 

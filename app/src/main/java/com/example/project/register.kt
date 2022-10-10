@@ -68,7 +68,7 @@ class register : AppCompatActivity() {
                             Toast.makeText(applicationContext,"Successfully", Toast.LENGTH_SHORT).show()
                             finish()
                         } else {
-                            Toast.makeText(applicationContext, "Error ", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "ข้อมูลซ้ำ ", Toast.LENGTH_SHORT).show()
                         }
                     }
 

@@ -46,6 +46,15 @@ class ReservedAdapter(val reservedList : ArrayList<Reserved>?,val context: Conte
         binding.stadiumName.text = reservedList!![position].stadium_name.capitalize()
         binding.date.text = "Date: " +reservedList!![position].reserve_date.toString().substring(0, 10)
         binding.time.text = "Time: " +reservedList!![position].time_start+":00 - "+reservedList!![position].time_end+":00"
+        if(reservedList!![position].payment_status == "1"){
+            binding.status.text = "Status: ชำระเงินเเล้ว"
+        }else if(reservedList!![position].payment_status == "2"){
+            binding.status.text = "Status: รอยืนยันยกเลิก"
+        }else if(reservedList!![position].payment_status == "3"){
+            binding.status.text = "Status: ยกเลิกเสร็จสิ้น"
+        }else if(reservedList!![position].payment_status == "4"){
+            binding.status.text = "Status: รอยืนยันการจอง"
+        }
     }
 
     override fun getItemCount(): Int {
